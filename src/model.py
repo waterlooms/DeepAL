@@ -14,7 +14,7 @@ class Model(nn.Module):
             dim_feedforward=512, 
             batch_first=True
         )
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=2)
+        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=1)
         self.linear2 = nn.Linear(dim_in, 2)
         self.softmax = nn.Softmax(dim=1)
     
@@ -50,7 +50,7 @@ class Model_no_Ablang(nn.Module):
             dim_feedforward=512, 
             batch_first=True
         )
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=2)
+        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=1)
         self.linear2 = nn.Linear(dim_in, 2)
         self.softmax = nn.Softmax(dim=1)
         self.embedding = nn.Embedding(num_embeddings=21, embedding_dim=dim_in)
